@@ -8,7 +8,6 @@ export default function useModelLoader({ number }, modelType) {
   );
 
   useEffect(() => {
-    console.log(modelType);
     if (modelType === "bread") {
       if (number === 0) {
         setBreadType("baguette");
@@ -30,7 +29,6 @@ export default function useModelLoader({ number }, modelType) {
         setBreadType("beef");
       }
     }
-    console.log(number);
   }, [number]);
   const gltf = useLoader(
     GLTFLoader,

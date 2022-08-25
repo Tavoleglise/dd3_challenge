@@ -1,6 +1,10 @@
-import "./styles.css";
+import "./global_styles.css";
 import Home from "./pages/Home";
 
 export default function App() {
-  return <Home />;
+  return (
+    <div className="App">
+      <Home />
+    </div>
+  );
 }

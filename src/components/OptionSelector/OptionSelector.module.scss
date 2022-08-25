@@ -1,0 +1,16 @@
+.optionSelector {
+  height: 73px;
+  display: grid;
+  align-items: center;
+  background-color: #ebebeb;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #dfdfdf;
+  border-bottom: 1px solid #dfdfdf;
+  button {
+    margin: 8px;
+    background-color: #fff;
+    border: 1px solid #dfdfdf;
+    height: 38px;
+    border-radius: 8px;
+  }
+}

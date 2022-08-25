@@ -1,0 +1,10 @@
+.bread_selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 146px;
+  align-items: center;
+  button {
+    height: 124px;
+    margin: 11px;
+  }
+}
