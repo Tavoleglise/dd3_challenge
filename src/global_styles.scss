@@ -3,7 +3,10 @@
 .App {
   font-family: "Inter", sans-serif;
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
+  .header {
+    height: 100px;
+  }
 }
 
 body {
