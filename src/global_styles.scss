@@ -7,6 +7,9 @@
   .header {
     height: 100px;
   }
+  .footer {
+    height: 100px;
+  }
 }
 
 body {
@@ -40,6 +43,9 @@ body {
     flex-direction: column;
     font-family: "Inter", sans-serif;
     position: relative;
+    .footer {
+      height: 0;
+    }
   }
   .header {
     position: relative;

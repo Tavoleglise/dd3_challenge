@@ -36,6 +36,7 @@ export default function App() {
         </div>
 
         <Home />
+        <div className="footer"></div>
       </div>
     </ThemeContext.Provider>
   );
