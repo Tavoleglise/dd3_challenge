@@ -1,6 +1,7 @@
 import styles from "./BreadSelector.module.scss";
 import { useContext } from "react";
 import { ThemeContext } from "../../App";
+import { motion } from "framer-motion";
 
 export default function BreadSelector({ breadType, setBreadType }) {
   const themeContext = useContext(ThemeContext);
@@ -20,7 +21,9 @@ export default function BreadSelector({ breadType, setBreadType }) {
     localStorage.setItem("breadType", "2");
   };
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
       id={themeContext}
       className={`${styles.bread_selector} bread_selector`}
     >
@@ -42,6 +45,6 @@ export default function BreadSelector({ breadType, setBreadType }) {
       >
         <img src="./static/images/sliced.png" alt="" />
       </button>
-    </div>
+    </motion.div>
   );
 }

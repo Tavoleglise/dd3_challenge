@@ -1,6 +1,7 @@
 import styles from "./InsideSelector.module.scss";
 import { useContext } from "react";
 import { ThemeContext } from "../../App";
+import { motion } from "framer-motion";
 
 export default function InsideSelector({ insiteType, setInsiteType }) {
   const themeContext = useContext(ThemeContext);
@@ -17,7 +18,9 @@ export default function InsideSelector({ insiteType, setInsiteType }) {
     localStorage.setItem("insiteType", "2");
   };
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
       id={themeContext}
       className={`${styles.inside_selector} inside_selector`}
     >
@@ -39,6 +42,6 @@ export default function InsideSelector({ insiteType, setInsiteType }) {
       >
         <img src="./static/images/salmon.png" alt="" />
       </button>
-    </div>
+    </motion.div>
   );
 }
