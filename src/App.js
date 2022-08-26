@@ -13,7 +13,9 @@ export default function App() {
   };
 
   useEffect(() => {
-    setTheme(localStorage.getItem("theme"));
+    if (localStorage.getItem("theme")) {
+      setTheme(localStorage.getItem("theme"));
+    }
   }, []);
 
   return (

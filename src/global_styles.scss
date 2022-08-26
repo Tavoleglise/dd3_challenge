@@ -40,7 +40,9 @@ body {
   }
   .header {
     position: relative;
-    height: 40px;
+    display: flex;
+    align-items: center;
+    height: 100px;
     width: 100%;
     .logo {
       width: 64px;

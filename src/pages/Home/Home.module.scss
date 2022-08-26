@@ -2,7 +2,6 @@
   text-align: center;
   width: 486px;
   background-color: #fff;
-  margin: 40px 0 40px 0;
   border-radius: 8px;
   border: 2px solid #dfdfdf;
   position: absolute;
@@ -20,7 +19,11 @@
 
 @media only screen and (max-width: 600px) {
   .App_box {
+    position: relative;
     width: 100%;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
     .title {
       font-size: 18px;
     }
