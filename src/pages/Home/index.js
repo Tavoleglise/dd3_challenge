@@ -17,22 +17,28 @@ export default function Home() {
 
   const handleBaguetteClick = () => {
     setBreadType(0);
+    localStorage.setItem("breadType", "0");
   };
   const handleBunsClick = () => {
     setBreadType(1);
+    localStorage.setItem("breadType", "1");
   };
   const handleSlicedClick = () => {
     setBreadType(2);
+    localStorage.setItem("breadType", "2");
   };
 
   const handleBeefClick = () => {
     setInsiteType(0);
+    localStorage.setItem("insiteType", "0");
   };
   const handleHamClick = () => {
     setInsiteType(1);
+    localStorage.setItem("insiteType", "1");
   };
   const handleSalmonClick = () => {
     setInsiteType(2);
+    localStorage.setItem("insiteType", "2");
   };
 
   const handleBreadMenuActive = () => {
@@ -50,8 +56,23 @@ export default function Home() {
   const handleChangeFlagColor = (color) => {
     setFlagColor(color);
   };
-
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if (localStorage.getItem("breadType")) {
+      setBreadType(parseInt(localStorage.getItem("breadType")));
+    }
+    if (localStorage.getItem("insiteType")) {
+      setInsiteType(parseInt(localStorage.getItem("insiteType")));
+    }
+    if (localStorage.getItem("flagColor")) {
+      setFlagColor(localStorage.getItem("flagColor"));
+    }
+  }, []);
+  useEffect(() => {
+    /*localStorage.setItem("breadType", breadType.toString());
+    localStorage.setItem("insiteType", insiteType.toString());
+    localStorage.setItem("flagColor", flagColor);
+    localStorage.setItem("theme", themeContext);*/
+  }, [breadType, insiteType, flagColor, themeContext]);
   return (
     <div className={styles.App_box}>
       <div id={themeContext} className={`${styles.title} title`}>
@@ -61,6 +82,7 @@ export default function Home() {
         breadType={breadType}
         insiteType={insiteType}
         flagColor={flagColor}
+        setActiveMenu={setActiveMenu}
       />
       <OptionSelector
         handleBreadMenuActive={handleBreadMenuActive}

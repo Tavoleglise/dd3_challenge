@@ -21,6 +21,7 @@ export default function ColorSelector({ handleChangeFlagColor, flagColor }) {
 const ColorButton = ({ color, handleChangeFlagColor, colorSelected }) => {
   const handleOnClick = () => {
     handleChangeFlagColor(color);
+    localStorage.setItem("flagColor", color);
   };
   return (
     <div

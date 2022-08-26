@@ -8,15 +8,23 @@ import ModelFlag from "../ModelFlag";
 import styles from "./CanvasContainer.module.scss";
 import { ThemeContext } from "../../App";
 
-export default function CanvasContainer({ breadType, insiteType, flagColor }) {
+export default function CanvasContainer({
+  breadType,
+  insiteType,
+  flagColor,
+  setActiveMenu,
+}) {
   const themeContext = useContext(ThemeContext);
   return (
     <div id={themeContext} className={`${styles.container} container`}>
       <Canvas>
         <Suspense fallback={null}>
-          <ModelBread breadNumber={breadType} />
-          <ModelInside insideNumber={insiteType} />
-          <ModelFlag color={flagColor} />
+          <ModelBread breadNumber={breadType} setActiveMenu={setActiveMenu} />
+          <ModelInside
+            insideNumber={insiteType}
+            setActiveMenu={setActiveMenu}
+          />
+          <ModelFlag color={flagColor} setActiveMenu={setActiveMenu} />
           <OrbitControls />
         </Suspense>
         <ambientLight args={[0xff0000]} intensity={0.1} />
