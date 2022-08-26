@@ -1,4 +1,4 @@
-# Mercado Libre Challenge
+# DD360 Challenge
 
 This project was a Tech Frontend challenge for DD360
 
