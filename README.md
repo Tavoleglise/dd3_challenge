@@ -12,8 +12,6 @@ This project was a Tech Frontend challenge for DD360
 
 `sass`
 
-`framer-motion`
-
 ## How to install and run
 
 In the main directory, run:
