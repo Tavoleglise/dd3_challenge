@@ -15,44 +15,6 @@ export default function Home() {
 
   const themeContext = useContext(ThemeContext);
 
-  const handleBaguetteClick = () => {
-    setBreadType(0);
-    localStorage.setItem("breadType", "0");
-  };
-  const handleBunsClick = () => {
-    setBreadType(1);
-    localStorage.setItem("breadType", "1");
-  };
-  const handleSlicedClick = () => {
-    setBreadType(2);
-    localStorage.setItem("breadType", "2");
-  };
-
-  const handleBeefClick = () => {
-    setInsiteType(0);
-    localStorage.setItem("insiteType", "0");
-  };
-  const handleHamClick = () => {
-    setInsiteType(1);
-    localStorage.setItem("insiteType", "1");
-  };
-  const handleSalmonClick = () => {
-    setInsiteType(2);
-    localStorage.setItem("insiteType", "2");
-  };
-
-  const handleBreadMenuActive = () => {
-    setActiveMenu(0);
-  };
-
-  const handleInsideMenuActive = () => {
-    setActiveMenu(1);
-  };
-
-  const handleColorMenuActive = () => {
-    setActiveMenu(2);
-  };
-
   const handleChangeFlagColor = (color) => {
     setFlagColor(color);
   };
@@ -67,16 +29,10 @@ export default function Home() {
       setFlagColor(localStorage.getItem("flagColor"));
     }
   }, []);
-  useEffect(() => {
-    /*localStorage.setItem("breadType", breadType.toString());
-    localStorage.setItem("insiteType", insiteType.toString());
-    localStorage.setItem("flagColor", flagColor);
-    localStorage.setItem("theme", themeContext);*/
-  }, [breadType, insiteType, flagColor, themeContext]);
   return (
     <div className={styles.App_box}>
       <div id={themeContext} className={`${styles.title} title`}>
-        Personaliza tu sandwitch
+        Personaliza tu sandwich
       </div>
       <CanvasContainer
         breadType={breadType}
@@ -84,29 +40,17 @@ export default function Home() {
         flagColor={flagColor}
         setActiveMenu={setActiveMenu}
       />
-      <OptionSelector
-        handleBreadMenuActive={handleBreadMenuActive}
-        handleInsideMenuActive={handleInsideMenuActive}
-        handleColorMenuActive={handleColorMenuActive}
-        activeMenu={activeMenu}
-      />
+      <OptionSelector activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
       {(() => {
         if (activeMenu === 0) {
           return (
-            <BreadSelector
-              handleBaguetteClick={handleBaguetteClick}
-              handleBunsClick={handleBunsClick}
-              handleSlicedClick={handleSlicedClick}
-              breadType={breadType}
-            />
+            <BreadSelector breadType={breadType} setBreadType={setBreadType} />
           );
         } else if (activeMenu === 1) {
           return (
             <InsideSelector
-              handleBeefClick={handleBeefClick}
-              handleHamClick={handleHamClick}
-              handleSalmonClick={handleSalmonClick}
               insiteType={insiteType}
+              setInsiteType={setInsiteType}
             />
           );
         } else if (activeMenu === 2) {

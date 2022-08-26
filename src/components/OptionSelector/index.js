@@ -2,13 +2,19 @@ import styles from "./OptionSelector.module.scss";
 import { useContext } from "react";
 import { ThemeContext } from "../../App";
 
-export default function OptionSelector({
-  handleBreadMenuActive,
-  handleInsideMenuActive,
-  handleColorMenuActive,
-  activeMenu,
-}) {
+export default function OptionSelector({ activeMenu, setActiveMenu }) {
   const themeContext = useContext(ThemeContext);
+  const handleBreadMenuActive = () => {
+    setActiveMenu(0);
+  };
+
+  const handleInsideMenuActive = () => {
+    setActiveMenu(1);
+  };
+
+  const handleColorMenuActive = () => {
+    setActiveMenu(2);
+  };
   return (
     <div
       id={themeContext}

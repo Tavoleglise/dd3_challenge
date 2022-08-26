@@ -2,13 +2,20 @@ import styles from "./InsideSelector.module.scss";
 import { useContext } from "react";
 import { ThemeContext } from "../../App";
 
-export default function InsideSelector({
-  handleBeefClick,
-  handleHamClick,
-  handleSalmonClick,
-  insiteType,
-}) {
+export default function InsideSelector({ insiteType, setInsiteType }) {
   const themeContext = useContext(ThemeContext);
+  const handleBeefClick = () => {
+    setInsiteType(0);
+    localStorage.setItem("insiteType", "0");
+  };
+  const handleHamClick = () => {
+    setInsiteType(1);
+    localStorage.setItem("insiteType", "1");
+  };
+  const handleSalmonClick = () => {
+    setInsiteType(2);
+    localStorage.setItem("insiteType", "2");
+  };
   return (
     <div
       id={themeContext}
