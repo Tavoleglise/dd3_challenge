@@ -3,36 +3,36 @@ import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 export default function useModelLoader({ number }, modelType) {
-  const [breadType, setBreadType] = useState(
+  const [model, setModel] = useState(
     modelType === "bread" ? "baguette" : "beef"
   );
 
   useEffect(() => {
     if (modelType === "bread") {
       if (number === 0) {
-        setBreadType("baguette");
+        setModel("baguette");
       } else if (number === 1) {
-        setBreadType("buns");
+        setModel("buns");
       } else if (number === 2) {
-        setBreadType("sliced");
+        setModel("sliced");
       } else {
-        setBreadType("baguette");
+        setModel("baguette");
       }
     } else if (modelType === "inside") {
       if (number === 0) {
-        setBreadType("beef");
+        setModel("beef");
       } else if (number === 1) {
-        setBreadType("ham");
+        setModel("ham");
       } else if (number === 2) {
-        setBreadType("salmon");
+        setModel("salmon");
       } else {
-        setBreadType("beef");
+        setModel("beef");
       }
     }
   }, [number]);
   const gltf = useLoader(
     GLTFLoader,
-    `./static/models/${modelType}/${breadType}.glb`
+    `./static/models/${modelType}/${model}.glb`
   );
   return gltf;
 }

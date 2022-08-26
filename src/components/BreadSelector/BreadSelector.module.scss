@@ -3,8 +3,22 @@
   grid-template-columns: repeat(3, 1fr);
   height: 146px;
   align-items: center;
+  border-radius: 0 0 8px 8px;
   button {
     height: 124px;
     margin: 11px;
+    border-radius: 8px;
+    border: 1px solid #dfdfdf;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .bread_selector {
+    button {
+      height: 64px;
+      img {
+        width: 60px;
+      }
+    }
   }
 }

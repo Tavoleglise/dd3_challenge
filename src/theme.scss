@@ -1,0 +1,84 @@
+#light.title {
+  color: #505050;
+}
+#dark.title {
+  color: #fff;
+  background-color: #222222;
+}
+#light.container {
+  background-color: #f3f4f6;
+}
+#dark.container {
+  background-color: #222222;
+}
+
+#light.App {
+  background-color: #e4e4e4;
+}
+#dark.App {
+  background-color: #101010;
+}
+
+#light.option_selector {
+  background-color: #ebebeb;
+  button {
+    background-color: #fff;
+    color: #dfdfdf;
+  }
+  .button_active {
+    border: 1px solid #f8832e !important;
+    color: #494949 !important;
+  }
+}
+
+#dark.option_selector {
+  background-color: #474747;
+  button {
+    background-color: #3e3e3e;
+    color: #717171;
+  }
+  .button_active {
+    border: 1px solid #f8832e !important;
+    color: #fff !important;
+  }
+}
+
+#light.bread_selector {
+  background-color: #fff;
+  button {
+    background-color: #fff;
+    color: #dfdfdf;
+  }
+}
+
+#dark.bread_selector {
+  background-color: #292929;
+  button {
+    background-color: #292929;
+    color: #717171;
+  }
+}
+
+#light.inside_selector {
+  background-color: #fff;
+  button {
+    background-color: #fff;
+    color: #dfdfdf;
+  }
+}
+
+#dark.inside_selector {
+  background-color: #292929;
+  button {
+    background-color: #292929;
+    color: #717171;
+  }
+}
+
+#light.color_selector {
+  background-color: #fff;
+}
+
+#dark.color_selector {
+  background-color: #292929;
+}

@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  padding: 11px 0;
+  border-radius: 0 0 8px 8px;
+  .colorButton {
+    width: 84px;
+    height: 124px;
+    border-radius: 8px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    .colorButton {
+      width: 50px;
+      height: 62px;
+    }
+  }
+}

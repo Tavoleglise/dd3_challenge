@@ -8,9 +8,21 @@
   border-bottom: 1px solid #dfdfdf;
   button {
     margin: 8px;
-    background-color: #fff;
+
     border: 1px solid #dfdfdf;
     height: 38px;
     border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: "Inter", sans-serif;
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      height: 24px;
+      margin-right: 7px;
+    }
   }
 }
